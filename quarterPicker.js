@@ -4,7 +4,7 @@
  * Version 1.0
  * Author:minchao 
  * Date:2018-04-08 13:43:21
- *  添加了回调callback供
+ * 添加了回调callback供
  */
 (function($) {
 	var QuarterPicker = function(dom, options) {
@@ -21,19 +21,19 @@
 	QuarterPicker.prototype = {
 		renderQuarterPicker: function() {
 			var self = this;
-			this.$dom.focus(function(event) {
+			this.$dom.focus(function() {
 				if(!self.opts.currentYear){
 					self.opts.currentYear = new Date().getFullYear();
 				}
 				$('body').find('.mc-quarter-picker-box').empty().remove();
-				$('body').append('<div class="mc-quarter-picker-box" style="left:' + $(this).offset().left + 'px;top:' + ($(this).offset().top + 30) + 'px;">' +
+				$('body').append('<div class="mc-quarter-picker-box" style="left:' + $(this).offset().left + 'px;top:' + ($(this).offset().top + 24) + 'px;">' +
 					'<div class="mc-year-picker">' +
 					'<div class="mc-prev-year"></div>' +
 					'<span>' + self.opts.currentYear + '</span>' +
 					'<div class="mc-next-year"></div>' +
 					'</div>' +
 					'<ul class="mc-quarter-picker">' +
-					'<li quarter="01" >第一季度</li><li quarter="02">第二季度</li><li quarter="03" >第三季度</li><li quarter="04" >第四季度</li>' +
+						'<li quarter="Q1" >第一季度</li><li quarter="Q2">第二季度</li><li quarter="Q3" >第三季度</li><li quarter="Q4" >第四季度</li>' +
 					'</ul>' +
 					'<div class="mc-quarter-picker-clear">清空</div>'+
 					'</div>');
@@ -58,9 +58,9 @@
 					}else{
 						$(innerSelf).val(value);
 					}
-					$(this).parent().parent().empty().remove();
+					$(this).parents('.mc-quarter-picker-box').empty().remove();
 				})
-				$('div.mc-quarter-picker-clear').click(function(event) {
+				$('div.mc-quarter-picker-clear').click(function() {
 					$(innerSelf).val("");
 					$(this).parent().empty().remove();
 				})

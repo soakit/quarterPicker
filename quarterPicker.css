@@ -1,13 +1,5 @@
-/*月份选择器*/
-*{
-	margin: 0px;
-	padding: 0px;
-}
-ul li{
-	list-style: none;
-}
-.mc-quarter-picker-box{
 
+.mc-quarter-picker-box{
 	position: absolute;
 	width: 200px;
 	border: 1px solid #CCCCCC;
@@ -31,23 +23,28 @@ ul li{
 	color:#fff;
 }
 .mc-prev-year,.mc-next-year{
-	top:10px;
-	width: 20px;
-	height: 20px;
+	border-left: 2px solid #92cfc8;
+    border-bottom: 2px solid #92cfc8;
+    width: 8px;
+    height: 8px;
+    top: 14px;
 	position: absolute;
 	cursor: pointer;
 }
 .mc-prev-year{
-	left: 10px;
-	background: url(left.png) no-repeat;
+    transform: rotate(45deg);
+    left: 15px;
 }
 .mc-next-year{
-	background: url(right.png) no-repeat;
-	right: 10px;
+	transform: rotate(225deg);
+    right: 15px;
 }
 
 .mc-quarter-picker{
 	overflow: hidden;
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
 }
 .mc-quarter-picker li{
 	font-size: 14px;
@@ -73,5 +70,4 @@ ul li{
 	margin:5px auto;
 	cursor: pointer;
 	background: #ffb632;
-
 }
